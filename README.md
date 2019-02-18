@@ -12,7 +12,7 @@ which you can click a blue "Download ZIP" button to download the repo.
 
 It looks like this:
 
-![Download repo](media/download.png)
+![Download repo](https://github.com/CodingNomads/python_core/blob/master/media/download.png)
 
 Unzip the file. This folder will contain **your own copy** of the labs and
 mini-project files that we will be working with.
@@ -43,7 +43,7 @@ these improvements to the original repository through following a few steps.
 Check out how to [create a branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) and how to [create a pull request](https://help.github.com/articles/about-pull-requests/).
 
 
-<img src="media/cn_square.png" alt="CodingNomads logo" width="400px"/>
+<img src="https://github.com/CodingNomads/python_core/blob/master/media/cn_square.png" alt="CodingNomads logo" width="400px"/>
 
 
 Keep learning! :)
