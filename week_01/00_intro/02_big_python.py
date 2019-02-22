@@ -10,3 +10,11 @@ Write the necessary code to print the following to the console:
     P         Y         T      H    H      O     N       N
 
 '''
+
+print(f"    PPPP   Y     Y  TTTTTTTTT  H    H      O     N       N")
+print(f"    P   P   Y   Y       T      H    H     O O    N N     N")
+print(f"    P   P    Y Y        T      H    H    O   O   N  N    N")
+print(f"    PPPP      Y         T      HHHHHH    O   O   N   N   N")
+print(f"    P         Y         T      H    H    O   O   N    N  N")
+print(f"    P         Y         T      H    H     O O    N     N N")
+print(f"    P         Y         T      H    H      O     N       N")
