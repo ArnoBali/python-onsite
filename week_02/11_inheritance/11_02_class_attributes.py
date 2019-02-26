@@ -1,25 +1,28 @@
-# https://www.python-course.eu/python3_class_and_instance_attributes.php
 
-class Count(object):
-    num = 0
-    def __init__(self):
-        # 'print(Count)' returns what object a 'Count' object is, which
-        # is the same as asking for 'print(type(self))' therefore:
-        Count.num += 1  # is same as: type(self).num += 1
+'''
+Flush out the classes below with the following:
 
-# the class attribute 'num' is 1
-i = Count()
-print(i.num)
+    - Add inheritance so that Class1 is inherited by Class2 and Class2 is inherited by Class3.
+    - Follow the directions in each class to complete the functionality.
 
-# the class attribute 'num' is 2 for both instances
-j = Count()
-print(j.num)
-print(i.num)
 
-# the class attribute 'num' is now 3 for all instances
-k = Count()
-print(i.num)
-print(j.num)
-print(k.num)
 
-# etc.
+'''
+
+class Class1:
+
+    # define an __init__() method that sets an attribute x
+    pass
+
+class Class2:
+
+    # define an __init__() method that sets an attribute y and calls the __init__() method of its parent
+    pass
+
+class Class3:
+
+    # define an __init__() method that sets an attribute z and calls the __init__() method of its parent
+    pass
+
+
+# create an object of each class and print each of its attributes
