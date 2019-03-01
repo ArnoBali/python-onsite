@@ -8,4 +8,32 @@ Write a program with the following three functions:
 
 
 '''
+import time
 
+def bark():
+    return "'bark bark!'"
+
+def eat(food_item, amount):
+    return f"The dog ate {amount} of {food_item}"
+
+def dog_sleep():
+    return time.sleep(5)
+
+
+while True:
+    print(bark())
+    a = input("Do you want to feed the dog? ")
+    print(a)
+
+    if a == "Yes":
+        food_item = input("What do you want to feed the dog? ")
+        food_amount = input("In what amount? ")
+        print(eat(food_item, food_amount))
+
+        print("zzzzzz")
+        dog_sleep()
+
+        print("happy doggie!")
+        break
+    else:
+        bark()

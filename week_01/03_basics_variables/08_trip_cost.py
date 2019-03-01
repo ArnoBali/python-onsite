@@ -15,3 +15,4 @@ p_gallon = int(input("please input Price per gallon of fuel:" ))
 cost_trip =  (miles / mpg) * p_gallon
 
 print(cost_trip)
+_
