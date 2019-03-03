@@ -13,3 +13,24 @@ The output should look something like this:
 	10|20|30|40|50|60|70|80|90|100|
 
 '''
+#
+# for x in range (1, 11):
+#
+#     for y in range(1, 11):
+#         y *= x
+#         if x.bit_length() == 1:
+#             print(y, end='|  ')
+#         if x.bit_length() == 2:
+#             print(y, end='| ')
+#         if x.bit_length() ==3:
+#             print(y, end='|')
+#     print("\r")
+
+
+for x in range (1, 11):
+
+    for y in range(1, 11):
+        y *= x
+        print(y, end='| ')
+    print("\r")
+

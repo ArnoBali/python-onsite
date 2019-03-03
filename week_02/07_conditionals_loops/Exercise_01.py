@@ -6,3 +6,11 @@ Print the result.
 NOTE: We will be using the input() function. This is demonstrated below.
 
 '''
+
+input_ = int(input("Please input a number between 1 - 1,000,000,000: "))
+
+if input_ % 2 == 0:
+    print("Even")
+else:
+    print("Uneven")
+

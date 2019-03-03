@@ -18,12 +18,32 @@ Example output:
 
 '''
 
+# input_ = input('Can you please enter whatever: ')
+input_ = 'Hello World again and again'
+l = list(input_)
+
+count_upper = 0
+count_lower = 0
+count_punctuation = 0
+dict_ = {}
+
+punctuation = [",", ".", ":", ";", "(", ")","!", "?",]
+
+for i in l:
+    if i in punctuation:
+        count_punctuation += 1
+    elif i == i.lower:
+        count_lower += 1
+    elif i == i.upper:
+        count_lower += 1
 
 
+dict_['Upper case'] = count_upper
+dict_['Lower case'] = count_lower
+dict_['Punctuation'] = count_punctuation
+dict_['Total characters'] = len(input_)
 
-
-
-
-
+print(l)
+print(dict_)
 
 

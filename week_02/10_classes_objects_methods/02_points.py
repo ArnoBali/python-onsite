@@ -11,46 +11,27 @@ class Point:
         self.y = y
 
     def __str__(self):
-    # Print a Point object in human-readable format.
-        return f"({self.x},{self.y})"
+        return f"({int(self.x)},{int(self.y)})"
 
 class Rectangle:
-    def __init__(self, width, height, corner):
+    def __init__(self, width, height, corner_x, corner_y):
         self.width = width
         self.height = height
-        self.corner = corner # corner is a Point object that specifies the lower-left corner
-
+        self.corner_x = corner_x # corner is a Point object that specifies the lower-left corner
+        self.corner_y = corner_y
 
     def find_center(self):
-        p = Point()
-        p.x = (self.corner.x + self.width) / 2
-        p.y = (self.corner.y + self.height) / 2
+        p_x = self.corner_x + (self.width / 2)
+        p_y = self.corner_y + (self.height / 2)
+        p = Point(p_x, p_y)
         return p
 
     def grow_rectangle(self, dwidth, dheight):
         self.width += dwidth
         self.height += dheight
 
-p = Point(1,0)
-print(p)
+r = Rectangle(10, 4, 1, 2)
+print(r.find_center())
 
-
-#  def main():
-#     blank = Point(3 ,4)
-#
-#     print(blank.print_point)
-#
-#     box = Rectangle(100, 200, Point(0, 0))
-#
-#     print(box.find_center)
-#
-#     print(box.width)
-#     print(box.height)
-#     print('grow')
-#     box.grow_rectangle(50, 100)
-#     print(box.width)
-#     print(box.height)
-#
-#
-# if __name__ == '__main__':
-#     main()
+r.grow_rectangle(3, 5)
+print(r.find_center())
