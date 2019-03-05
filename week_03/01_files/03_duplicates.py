@@ -18,3 +18,20 @@ Source: Read through the "Files" chapter in Think Python 2e:
 http://greenteapress.com/thinkpython2/html/thinkpython2015.html
 
 '''
+
+with open('words.txt', 'r') as fin:
+    words = fin.readlines()
+
+#1 Write a program that searches a directory and all of its subdirectories recursively
+#2 returns a list of complete paths for all files with a given suffix (like .mp3)
+#3 create 1 complete list
+#4 recognize duplicates, and remove (create a set, turn back to list)
+#5
+
+
+
+
+
+
+
+

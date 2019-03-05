@@ -15,3 +15,19 @@ Source: Read through the "Files" chapter in Think Python 2e:
 http://greenteapress.com/thinkpython2/html/thinkpython2015.html
 
 '''
+
+
+def sed(filename1,filename2):
+    string = 'hello'
+    replacement_string = 'hello world'
+
+    with open(filename1, 'r') as fin:
+        file1 = fin.readlines()
+
+    with open(filename2, 'a') as fout:
+        for i in file1:
+            file2 = fout.write(i.replace(string, replacement_string))
+
+
+sed('words.txt', 'replacement_words.txt')
+
