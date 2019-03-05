@@ -19,3 +19,35 @@ You have a folder containing three text files of books from Project Gutenberg:
     first 100 characters of any of the files contain the string "attention".
 
 '''
+
+class AttentionException(Exception):
+    pass
+
+with open("war_and_peace.txt", "r") as fin:
+    content = fin.read()
+
+with open("crime_and_punishment.txt", "w") as fout:
+    fout.write("")
+
+books = ["war_and_peace.txt","crime_and_punishment.txt","pride_and_prejudice.txt"]
+
+for book in books:
+    try:
+        with open(book,"r") as fin:
+            content = fin.read()
+    except FileNotFoundError as fnf:
+        print(fnf)
+    except PermissionError as err:
+        print(err)
+    else:
+        try:
+            first_char = content[:100]
+        except IndexError as err:
+            print(err)
+        else:
+            if "attention" in (first_char):
+                raise AttentionException
+            print(first_char)
+
+
+
