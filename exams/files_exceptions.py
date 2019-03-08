@@ -20,13 +20,15 @@ You have a folder containing three text files of books from Project Gutenberg:
 
 '''
 
+
 class AttentionException(Exception):
     pass
+
 
 with open("war_and_peace.txt", "r") as fin:
     content = fin.read()
 
-with open("crime_and_punishment.txt", "w") as fout:
+with open("crime_and_punishment.txt", "w+") as fout:
     fout.write("")
 
 books = ["war_and_peace.txt","crime_and_punishment.txt","pride_and_prejudice.txt"]
