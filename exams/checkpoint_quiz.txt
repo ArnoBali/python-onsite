@@ -19,117 +19,264 @@ Ok that's all, now let's get to practicing!! :)
 
 - Using the command line, how do you:
     - change directories?
+        cd <directory path/>
+        cd ../
     - list the contents of a folder?
+        ls
+        ls -al
     - print the path of the current directory?
-    - move a file from one location to the another?
+        pwd
+    - move a file from one location to another?
+        mv <file> <directory>
+        mv <filename> <directory/filename2>
     - copy a file from one location to another?
+        cp <filename> <directory/filename2>
     - create a file?
+        touch <filename.txt>
     - create a folder?
+        mkdir <foldername>
     - delete a file?
+        rm <file.txt>
     - delete a folder?
+        rmdir <foldername>
     - delete a folder that contains a file?
+        rm -rf <foldername>
     - print the contents of a file?
+        cat <filename>
     - edit the contents of a file?
+        echo <content> > <filename> (overwrites)
+        echo <content> >> <filename> (append)
+        vim <filename>
+        :wq
 
 - Answer the following question about Git and Github:
     - What is a branch?
+       A branch is a copy of the master repository with link to the master, to allow a user to write his code without messing up the master.
     - What is a remote?
+        A remote is the remote copy of your repository online to GitHub.
 
 - What are the commands to do the following?
     - initialize a git repository
+        git init
     - clone a repository from Github
+        git clone 'https://'
     - add a file to the staging area
+        git add 'filename'
     - make a commit
+        git commit -m "first commit"
     - push to Github
+        git push origin master
     - pull from Github
+        git pull origin master
     - see the names of the branches
+        git branch
     - see the names of the remotes
+        git remote -v
     - add a new remote
+        git remote add <remote name> <url>
 
 - Describe a variable and a value through their relationship.
-
+        A value is linked to a variable once created. The value is subject to changed however.
+        Variable is assigned a value.
 - What are five common data types in Python?
-
+        1. String
+        2. List
+        3. Dictionairy
+        4. Tuple
+        5. float
+        6. bool
+        7. set
+        8. int
 - What is the difference between an expression and a statement?
+        expression is linked to a actual value, and statement does something
+
+        For example:
+            expression: 2**2 = 4
+            statement: return
 
 - What are relational operators?
-
+        1. +
+        2. -
+        3. *
+        4. ==
+        5. !=
 - What is the difference between == and = ?
-
+        '==' Is equal to
+        '=' for assigning
 - Demonstrate the use of an if/elif/else conditional.
+        x = int(input('what was your grade: '))
 
-- What does mean to have a function that "takes" an argument?
+        if x is >= 8:
+            print('High score!')
+        elif x is >+ 6:
+            print('Ok score')
+        else:
+            print('Not good enough, sorry')
+
+- What does it mean to have a function that "takes" an argument?
+        if a function takes an argument, the function uses that agrument as input.
+            func( argument):
+                return -1
+
+           a = func(<argument>)
+           a = func(2)
 
 - What is a return value?
+        The value that is returned from calling a function. All other local variables and values of the function are lost.
 
 - How do you import a class to one of your programs?
+        from <directorypath/filename.py. open <Classname>
 
 - Do parameters and variables inside of a function exist outside of it?
 Why or why not?
+        No it doesn't. Else calling a random function might overwrite other variables used before in your code.
+        This isolation allows Object oriented programming to work to effectively.
 
 - What is the difference between a "fruitful" function and a void function?
+        Void function returns 'None'
+        Fruitfull function return a value
 
+        A void function is:
+            def func(parameter1, parameter2)
+                pass
 - What does a void function always return in Python?
-
+        'None'
 - What are some of the reasons we separate our code into functions?
+        - To prevent existing variables to be overwritten
+        - To simplify our code through the ability to call code
+        - Allow for OOP
+        - Don't Repeat Yourself (DRY) !!!
 
 - What is the difference between the following two statements?
     import math
-    <and>
+        math.pi
     from math import *
-    <and>
+        pi
+    from math import pi
+        pi
     import math as m
+        m.pi
+
 
     How can you use the functions of the math module in each case?
+        No, with import Math you import all methods of 'math'.
+        With 'from math import *' you import all variables or functions from math.
+        With 'import math as m' you still import all math methods, but assign the math funtion/class to 'm'
 
 - What is an index?
+        Starting at 0 and counting up, an index defines the location of a value in  lists, strings and tuples. It allow to call a element based on the index it resides in.
 
 - How do you use slicing to produce the string "coding" from the string
-"I love coding!!!"?
+"I love coding!!!?"
+        a = "I love coding!!!?"
+        print(a[7:13])
 
 - How do you invoke the replace() method on the string
 'coding is the best' to replace all 's' characters with 'z' characters?
+        a = 'coding is the best'
+        a.replace('s', 'z')
 
 - What is the most important difference between a list and a string?
+        A list can hold multiple elements, including multiple strings.
+        A list is mutable and a string is immutable.
 
 - How do you use a delimiter other than a whitespace with the split() method?
+        split('e') splits on e
 
 - If two objects are identical, does that also make them equivalent?
 Why or why not? How can you prove it in code?
+        Yes, since the memory locations are the same. It is one object.
+        a = 12 * x + 2020
+        b = 12 * x + 2020
+        a == b holds True
+        a is b holds False
+
+        identical = same memory locations
+        equivalent = same value
 
 - What is it called when an object has more than one reference to it?
+        aliasing
 
 - How do you add an item to the dictionary first_dict using square
     brackets?
+    fist_dict['key'] = 'value'
 
 - Write an example for-loop to traverse a dictionary loop_dict and
     print out the keys and values.
 
+    for (key, value) in loop_dict.items():
+        print(key, value)
+        >>> key, value    #seperate values
+    for item in loop_dict.items():
+        print(item)
+        >>> (key, value)  # is a tuple
+
+        -> this is called 'tuple unpacking'
+
 - What are the three primary tenants of Object Oriented Programming (OOP)?
+        1. Polymorphism: (override existing methods)
+        2. Encapsulation: (methods, attributes are encusulated in e.g. the Dog class)
+        3. Inheritance: (ability to inherent classes and functions in another)
 
 - Why is OOP useful?
+        The data is packaged up with the objects, allow you to model real-world situations
 
 - What is a class?
-
+        A blueprint to make instances to of itself.
 - What are class attributes?
+        Direct defined arguments of the class.
+        Class attribute, for example:
+            class Chair:
+                legs = 4
+        Instance attribute:
+            class Chair:
+                def __init__(self, color)
+                self.color = color
 
 - What does it mean when an object is embedded?
 
 - How is a method different than a function?
+        Method gets the object passed as the first argument. e.g.: object.method()
+        Function operates on it's own.
 
 - What is the `__init__` method and what is it used for?
+        This dunderscore method is mandatory for each class, as it links the created parameters directly to the instances of a class.
+
+        On instance (of Class) creation, i'm calling the __init__ method.
+        For example:
+            d = Dog()
+
+        Dif parameter, attribute and argument:
+            parameter:
+            attribute:
+            argument:
+
 
 - Give an example `__init__` method for a `Car` class with attributes:
 `make`, `model` and `year`.
 
+        Class Car(self, make, model, year):
+            def __init__(self):
+                self.make = make
+                self.model = model
+                self.year = year
+
 - How does a class inherit from another class?
+        Class2(Class1):
+
+        only use 'supper()', to reference to parent class and use it's parameter
 
 - Explain the difference between a class attribute and an instance attribute.
+        A class attribute will be created for all instances of that class. A instance attribute is just a attribute linked to the class.
 
 - How do you open a file in write mode? Write some example code below.
+        with open ('file.txt', 'w') as fout:
+            fout.write(" ")
 
 - Can you have a 'try' without an 'except'? Can you have an 'except' without
 a 'try'? Bonus: How does 'else' fit into this picture?
+        No you can't have a except without a try and vise versa.
+        Else can be used to allow for something when no except has been triggered.
 
 - Why is the following code bad form?
 
@@ -138,28 +285,41 @@ a 'try'? Bonus: How does 'else' fit into this picture?
     except Exception as exc:
         print(exc)
     except ZeroDivisionError as zde:
-        print zde
+        print(zde)
+
+    This code above will get all Exceptions, and will never move to ZDE. We want to be explicit on Exceptions, and not use this catch all Exception.
 
 - Write a function that takes in the name of a file, reads the contents
 of that file word by word and places each word in a list, then prints
 the list to the console.
+    with open ('file.txt', 'r') as fin:
+            fin.read().split()
 
 - Create a custom exception below.
+    def MyException(Exception):
+        pass
 
 - Write a very simple function that demonstrates raising the exception from the
 previous question.
+    a = 1
+    b = 1
+
+    if a != b:
+        raise = MyException("not equal")
 
 - Explain the following keywords:
-    -try
-    -except
-    -raise
-    -else
-    -finally
-    -return
-    -break
-    -continue
+    -try: When in a block, compute something
+    -except: If error occurs in try block, pass this Exception
+    -raise: call/raise this Exception
+    -else: if you pass the try, and no except is hit, go to else
+    -finally: 'useless'
+    -return: return value that will be used out
+    -break: stop the loop, and continue outside of loop.
+    -continue: stop and move to next iteration.
 
-- When should you throw an exception rather than catch the exception?
+- When should you throw (raise) an exception rather than catch the exception?
+    throw (raise): will stop the process and return
+    catch:
 
 - Demonstrate a while loop, and a for loop, that print out every other
 odd number between 1000 and 0 in a descending order:
@@ -167,8 +327,12 @@ odd number between 1000 and 0 in a descending order:
 - How comfortable do you feel answering the questions above?
 
 - How do you create and activate a virtual environment?
+    python3 -m venv <name>
+    source .env/bin/activate    (doesn't run in python but in bash)
+    deactivate                  (doesn't run in python but in bash)
 
 - What is the variable __name__ used for?
+    if __name__ == "__main__"
 
 - Write code that prints out all items passed to a function.
 The amount of items should be able to be different for every function call.
