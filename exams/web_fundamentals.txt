@@ -1,0 +1,15 @@
+What can you compare a URL to on your local computer?
+
+
+What 3 main parts is a URL made of?
+	1)
+	2)
+	3)
+
+
+What do we see if we type file://localhost/ into the Chrome search bar?
+
+
+Describe the basic idea of Client-Server architecture
+
+
