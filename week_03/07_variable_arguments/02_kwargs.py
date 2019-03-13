@@ -3,10 +3,8 @@ Write a script with a function that demonstrates the use of **kwargs.
 
 '''
 
-def func(name, **kwargs):
-    return f"{name}, {kwargs}"
+def fun(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} maps to {value}.")
 
-
-print(func('Arno'))
-
-print(func('Arno', '4: Peter', '6: Robert'))
+fun(name="martin", number=1, greeting="hello")
