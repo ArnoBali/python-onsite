@@ -5,9 +5,9 @@ What is the equivalent of a URL on your local computer?
 
 
 What 3 main parts is a URL made of?
-	1)
-	2)
-	3)
+	1) protocol
+	2) domain name
+	3) path
 
 
 What do we see if we type file://localhost/ into the Chrome search bar?
