@@ -286,8 +286,11 @@ a 'try'? Bonus: How does 'else' fit into this picture?
         print(exc)
     except ZeroDivisionError as zde:
         print(zde)
+<<<<<<< HEAD
 
     This code above will get all Exceptions, and will never move to ZDE. We want to be explicit on Exceptions, and not use this catch all Exception.
+=======
+>>>>>>> b62422942ee9526109a7131fdee0a7078aff144e
 
 - Write a function that takes in the name of a file, reads the contents
 of that file word by word and places each word in a list, then prints
