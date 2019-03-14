@@ -5,3 +5,7 @@ with a precision of more than 10 digits in your console.
 TIP: remember the title of this course section ;)
 
 '''
+
+import math
+print("%.10f" % math.pi)
+print("%.10f" % math.e)
