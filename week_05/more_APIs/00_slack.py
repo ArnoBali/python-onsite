@@ -22,6 +22,13 @@ Store the links in a JSON file that has the following form:
 ]
 
 We will continue to work with this data throughout the week, so make sure to complete it!
-
+https://slack.dev/python-slackclient/
 '''
+
+import os
+
+import slackclient
+
+token = os.environ["SLACK_BOT_TOKEN"]
+print(token)
 
