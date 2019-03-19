@@ -14,6 +14,7 @@ HINTS:
 BONUS: Explore the logging package for easier tracking
 
 '''
+
 from secrets import tokens
 import requests
 import time
@@ -41,4 +42,5 @@ max_value = max(btc_dict.values())
 for CRYPT0_KEY, value in btc_dict.items():
     if value == max_value:
         print(f"At {CRYPTO_KEY} the highest BTC price at {value} occurred! ")
+
 
