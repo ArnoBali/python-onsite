@@ -14,3 +14,28 @@ HINTS:
 BONUS: Explore the logging package for easier tracking
 
 '''
+import time
+start_time = time.time()
+print(f"Start time: {start_time}")
+t_end = start_time + 60 * 60
+
+
+import requests
+
+key = '2c2bc144d941dc06443d76f613d2882d'
+url = f'https://api.nomics.com/v1/prices?key={key}'
+prices = requests.get(url)
+
+bitcoin_price = prices.json()[105]['price']
+
+btc_dict = {}
+
+while time.time() < t_end:
+    btc_dict[time.time()] = bitcoin_price
+    continue
+
+max_value = max(btc_dict.values())
+for key, value in btc_dict.items():
+    if value == max_value:
+        print(f"At {key} the highest BTC price at {value} occurred! ")
+

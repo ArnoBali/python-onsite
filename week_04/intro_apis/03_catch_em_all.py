@@ -11,3 +11,15 @@ BONUS: Using your script, create a folder and download the main 'front_default'
        Name the files appropriately using the name data from your response.
 
 '''
+import requests
+
+for num in range(1,152):
+    url = f"https://pokeapi.co/api/v2/pokemon/{num}/"
+    pokemon = requests.get(url)
+
+    name = pokemon.json()["name"]
+    height = pokemon.json()['height']
+
+    with open('catch_em_all.txt','a') as fout:
+        fout.write(f"{name.capitalize()}'s height: {height} (ID:{num}) \n")
+

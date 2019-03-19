@@ -14,3 +14,16 @@ BONUS:
   - etc. (cycle back to the trivia after year)
 
 '''
+import requests
+
+
+# for num in range(100):
+#     url = f"http://numbersapi.com/{num}?notfound=floor&type=trivia"
+#     r = requests.get(url)
+#     print(r.text)
+
+for num in range(10):
+    url = f"http://numbersapi.com/{num}?notfound=floor&type=trivia"
+    r = requests.get(url)
+    with open('numbersapi.txt','a') as fout:
+        fout.write(f"{r.text} \n")

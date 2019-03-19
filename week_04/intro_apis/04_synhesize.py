@@ -9,3 +9,23 @@ Using the Chuck Norris API in combination with the datamuse API
 * Synthesize the collected results into an avant-garde poem and present it to class ;)
 
 '''
+
+import requests
+
+url_chuch = 'https://api.chucknorris.io/jokes/random'
+chuck = requests.get(url_chuch)
+
+chuck_sentence = chuck.json()['value']
+
+word_list = chuck_sentence.split()
+
+rym_word = word_list[-1].rstrip('!.')
+url_muse = f'https://api.datamuse.com/words?rel_rhy={rym_word}'
+
+muse = requests.get(url_muse)
+
+print(muse.json()[0]['word'])
+print(chuck_sentence)
+
+with open('chuch_rym', 'a') as fout:
+    fout.write(f"{chuck_sentence}\n {muse.json()[0]['word']} \n")
