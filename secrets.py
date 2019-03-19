@@ -1,2 +1,0 @@
-
-token = {'CRYPTO_KEY':'2c2bc144d941dc06443d76f613d2882d'}
