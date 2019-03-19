@@ -14,30 +14,31 @@ HINTS:
 BONUS: Explore the logging package for easier tracking
 
 '''
+from secrets import tokens
+import requests
 import time
+
 start_time = time.time()
 print(f"Start time: {start_time}")
 t_end = start_time + 10 * 1
 
 
-import requests
-import os
+CRYPTO_KEY = tokens['CRYPTO_API']
 
-CRYPT0_KEY = os.environ.get('CRYPTO_KEY')
-print(CRYPT0_KEY)
-# url = f'https://api.nomics.com/v1/prices?key={CRYPT0_KEY}'
-# prices = requests.get(url)
-#
-# bitcoin_price = prices.json()[105]['price']
-#
-# btc_dict = {}
-#
-# while time.time() < t_end:
-#     btc_dict[time.time()] = bitcoin_price
-#     continue
-#
-# max_value = max(btc_dict.values())
-# for CRYPT0_KEY, value in btc_dict.items():
-#     if value == max_value:
-#         print(f"At {CRYPT0_KEY} the highest BTC price at {value} occurred! ")
+
+url = f'https://api.nomics.com/v1/prices?key={CRYPTO_KEY}'
+prices = requests.get(url)
+
+bitcoin_price = prices.json()[105]['price']
+
+btc_dict = {}
+
+while time.time() < t_end:
+    btc_dict[time.time()] = bitcoin_price
+    continue
+
+max_value = max(btc_dict.values())
+for CRYPT0_KEY, value in btc_dict.items():
+    if value == max_value:
+        print(f"At {CRYPTO_KEY} the highest BTC price at {value} occurred! ")
 
