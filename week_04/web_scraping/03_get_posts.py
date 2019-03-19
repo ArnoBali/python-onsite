@@ -43,8 +43,7 @@ class_all = class1 + class2
 
 with open('denver_posts.txt', 'a') as fout:
     for i in class_all:
-        for y in range(3):
-            img = i.xpath('//a')[y]
+            img = i.xpath('//a')[1]
             fout.write(f"{img.text}\n")
 
 
