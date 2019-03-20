@@ -25,10 +25,99 @@ We will continue to work with this data throughout the week, so make sure to com
 https://slack.dev/python-slackclient/
 '''
 
-import os
+from secrets import tokens
 
-import slackclient
+import pprint
+import time
 
-token = os.environ["SLACK_BOT_TOKEN"]
-print(token)
+from slackclient import SlackClient
 
+slack_token = tokens["SLACK_BOT_TOKEN"]
+sc = SlackClient(slack_token)
+
+python_resources = sc.api_call("conversations.history", channel="CGUDWETHR")
+
+messages = python_resources['messages']
+
+# pprint.pprint(messages[5]['attachments'][0]['from_url'])
+
+# for m in range(len(messages)):
+#
+#     try:
+#         msg = messages[m]['attachments'][0]['from_url']
+#         print(msg)
+#
+#     except Exception as error:
+#         pass
+#         # print('Caught this error: ' + repr(error))
+
+
+#-----------------------------------------------------------------------------------------------------
+# 1. Create list
+# 2. Create dict
+# 3. Map messages' attributes to dict
+# 4. Write list with attributes as dictionaries into Json file
+
+
+msg_list = []
+msg_dict = {}
+
+for m in range(len(messages)):
+
+
+    try:
+        msg_dict["link"] = messages[m]['attachments'][0]['from_url']
+    except Exception as error:
+        pass
+
+    try:
+        msg_dict["description"] = messages[m]['attachments'][0]['title']
+    except Exception as error:
+        pass
+
+    try:
+        msg_dict["date_added"] = time.ctime(int(float(messages[m]['ts'])))
+    except Exception as error:
+        pass
+
+        msg_dict["read"] = False # defaults to False, change to True if you read it
+        msg_dict["rating"] = 0   # on a scale from 1-10, initially 0
+
+    try:
+        msg_dict["comments"] = messages[m]['attachments'][0]['text']
+    except Exception as error:
+        pass
+        msg_dict["starred"] = False # defaults to False, change to True if you think it's great
+
+        msg_list.append(msg_dict)
+
+pprint.pprint(msg_list)
+
+import json
+with open('data.json', 'w') as outfile:
+    json.dump(msg_list, outfile)
+
+
+# msg_list = []
+#
+# for m in range(len(messages)):
+#
+#     try:
+#         msg_list.append({
+#             "link": messages[m]['attachments'][0]['from_url'],
+#             "description": messages[m]['attachments'][0]['title'],
+#             "date_added": time.ctime(int(float(messages[m]['ts']))),
+#             "read": False,  # defaults to False, change to True if you read it
+#             "rating": 0,  # on a scale from 1-10, initially 0
+#             "comments": [messages[m]['attachments'][0]['text']],
+#             "starred": False # defaults to False, change to True if you think it's great
+#         })
+#
+#     except Exception as error:
+#         pass
+#
+# pprint.pprint(msg_list)
+#
+# import json
+# with open('data.json', 'w') as outfile:
+#     json.dump(msg_list, outfile)
