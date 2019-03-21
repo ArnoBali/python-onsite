@@ -1,1 +1,2 @@
 - Import the dvdrental schema and data to your postgresql database from the command line.
+DONE!

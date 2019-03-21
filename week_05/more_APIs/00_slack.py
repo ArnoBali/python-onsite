@@ -68,16 +68,19 @@ for m in range(len(messages)):
     try:
         msg_dict["link"] = messages[m]['attachments'][0]['from_url']
     except Exception as error:
-        pass
+        # msg_dict["link"] = None
+        continue
 
     try:
         msg_dict["description"] = messages[m]['attachments'][0]['title']
     except Exception as error:
+        msg_dict["description"] = None
         pass
 
     try:
         msg_dict["date_added"] = time.ctime(int(float(messages[m]['ts'])))
     except Exception as error:
+        msg_dict["date_added"] = None
         pass
 
         msg_dict["read"] = False # defaults to False, change to True if you read it
@@ -86,12 +89,13 @@ for m in range(len(messages)):
     try:
         msg_dict["comments"] = messages[m]['attachments'][0]['text']
     except Exception as error:
+        msg_dict["comments"] = None
         pass
         msg_dict["starred"] = False # defaults to False, change to True if you think it's great
 
-        msg_list.append(msg_dict)
+    msg_list.append(msg_dict)
 
-pprint.pprint(msg_list)
+print(msg_list)
 
 import json
 with open('data.json', 'w') as outfile:

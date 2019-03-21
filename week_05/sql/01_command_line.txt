@@ -2,6 +2,10 @@ From the command line, log on to your postgresql server and do the following.
 Copy the commands you used to this file:
 
 - list all the users on the server
+>>> \du
 - show all the databases
+>>> \l
 - connect to the dvdrental database
+>>> \c dvdrental
 - list all of the tables in the dvdrental database
+>>> \dt

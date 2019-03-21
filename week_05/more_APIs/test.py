@@ -23,10 +23,10 @@ python_resources = sc.api_call("conversations.history", channel="CGUDWETHR")
 messages = python_resources['messages']
 
 # pprint.pprint(python_resources)
-# pprint.pprint(messages)
-ts = time.ctime(int(float(messages[5]['ts'])))
+pprint.pprint(messages)
+# ts = time.ctime(int(float(messages[5]['ts'])))
 
-print(ts)
+# print(ts)
 
 
 # pprint.pprint(messages[5]['attachments'][0]['title'])

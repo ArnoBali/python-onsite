@@ -2,17 +2,74 @@ Using the method of your choice (pgadmin 4 or psql) write the query statements f
 them below:
 
 - Select all the actors with the first name of your choice
+>>> SELECT * FROM actor WHERE first_name='Ben';
 
 - Select all the actors and the films they have been in
+>>>
+SELECT a.first_name, a.last_name, f.title
+FROM actor as a
+JOIN film_actor as fa
+ON a.actor_id = fa.actor_id
+JOIN film as f
+ON f.film_id = fa.film_id;
 
 - Select all the actors that have appeared in a category of you choice comedy
+>>>
+SELECT a.first_name, a.last_name, f.title
+FROM actor as a
+
+JOIN film_actor as fa
+ON a.actor_id = fa.actor_id
+
+JOIN film as f
+ON f.film_id = fa.film_id
+
+JOIN film_category as fc
+ON f.film_id = fc.film_id
+
+JOIN category as c
+ON c.category_id = fc.category_id
+
+WHERE c.name='Comedy';
 
 - Select all the comedic films and that and sort them by rental rate
+>>>
+SELECT f.title, f.rental_rate
+FROM film as f
+
+JOIN film_category as fc
+ON f.film_id = fc.film_id
+
+JOIN category as c
+ON c.category_id = fc.category_id
+
+ORDER BY f.rental_rate;
+
 
 - Select all the information about the staff in a zip code of your choice
+>>>
+SELECT s.first_name, s.last_name
+FROM staff as s
+
+JOIN address as a
+ON a.address_id = s.address_id
+
+WHERE a.postal_code='54321';
 
 - Using one of the statements above, add a GROUP BY
+>>>
+SELECT film_id, release_year FROM film GROUP BY film_id;
 
 - Using on of the statements above, add a ORDER BY
+>>>
+SELECT f.title, f.rental_rate
+FROM film as f
 
+JOIN film_category as fc
+ON f.film_id = fc.film_id
+
+JOIN category as c
+ON c.category_id = fc.category_id
+
+ORDER BY f.rental_rate;
 
