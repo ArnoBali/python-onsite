@@ -10,3 +10,32 @@ BONUS: Look into CRON jobs to automate your tweets to go out at scheduled times.
 
 '''
 
+
+import tweepy
+from secrets import twitter
+import pprint
+import json
+
+
+CAK = twitter['CONSUMER_API_KEY']
+CASK = twitter['CONSUMER_API_SECRET_KEY']
+
+AT = twitter['ACCESS_TOKEN']
+ATS = twitter['ACCESS_TOKEN_SECRET']
+
+auth = tweepy.OAuthHandler(CAK, CASK)
+auth.set_access_token(AT, ATS)
+api = tweepy.API(auth)
+
+with open('tweets.json', 'r') as f:
+    tweets = json.load(f)
+    for tweet in tweets:
+        api.update_status('tweet')
+
+# DO THIS IN CLI
+# ➜  python-onsite git:(master) crontab -e
+# crontab: no crontab for ak - using an empty one
+#
+# at 10.05:
+# 5 10 * * * python3 /Users/ak/Documents/_CodingNomads/python-onsite/week_05/more_APIs/02_tweet.py
+

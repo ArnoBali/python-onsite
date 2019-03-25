@@ -39,7 +39,7 @@ python_resources = sc.api_call("conversations.history", channel="CGUDWETHR")
 
 messages = python_resources['messages']
 
-# pprint.pprint(messages[5]['attachments'][0]['from_url'])
+# pprint.pprint(messages[1]['attachments'])
 
 # for m in range(len(messages)):
 #
@@ -57,13 +57,13 @@ messages = python_resources['messages']
 # 2. Create dict
 # 3. Map messages' attributes to dict
 # 4. Write list with attributes as dictionaries into Json file
-
+#
 
 msg_list = []
-msg_dict = {}
 
 for m in range(len(messages)):
 
+    msg_dict = {}
 
     try:
         msg_dict["link"] = messages[m]['attachments'][0]['from_url']
@@ -99,7 +99,7 @@ print(msg_list)
 
 import json
 with open('data.json', 'w') as outfile:
-    json.dump(msg_list, outfile)
+    json.dump(msg_list, outfile, sort_keys=True, indent=4, separators=(',', ':'))
 
 
 # msg_list = []
