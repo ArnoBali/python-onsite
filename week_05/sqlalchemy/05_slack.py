@@ -24,3 +24,31 @@ NOTE: If you run this several times you will be saving the same information in t
 To prevent this, you should add a check to see if the record already exists before inserting it.
 
 '''
+
+import sqlalchemy as db
+
+
+DATABASE_URI = f'postgres+psycopg2://ak@localhost:5432/slack_db'
+
+engine = db.create_engine(DATABASE_URI, echo=True)
+connection = engine.connect()
+metadata = db.MetaData()
+
+
+test = Table('test', metadata,
+            Column('id', Integer(), autoincrement=True, primary_key=True),
+            Column('quote', String(255), nullable=False),
+            Column('year', Integer()),
+            Column('greatness', SmallInteger())
+            )
+
+t2 = Table('t2', metadata,
+            Column('id', Integer(), autoincrement=True, primary_key=True),
+            Column('quote', String(255), nullable=False),
+            Column('year', Integer()),
+            Column('greatness', SmallInteger())
+            )
+
+
+metadata.create_all(engine)
+

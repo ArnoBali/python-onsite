@@ -1,0 +1,3 @@
+[console_scripts]
+sandman2ctl = sandman2.scripts.sandman2ctl:main
+

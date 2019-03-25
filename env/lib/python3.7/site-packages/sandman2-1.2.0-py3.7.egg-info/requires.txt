@@ -1,0 +1,5 @@
+Flask>=1.0.2
+Flask-SQLAlchemy==2.3.2
+SQLAlchemy==1.2.15
+Flask-Admin>=1.5.3
+Flask-HTTPAuth>=3.2.4
