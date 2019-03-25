@@ -6,7 +6,8 @@ project 'labs' through commits
 	- Django SECRET_KEY in separate secrets.py file
 	- .gitignore the right files and folders (also the Database file!)
 	- create a requirements.txt file
-- commit #3: creating the database models for our app
+- commit #3: creating an app called 'logs'
+- commit #4: add the database models for our app
 
 
 by the end of the day you should:
