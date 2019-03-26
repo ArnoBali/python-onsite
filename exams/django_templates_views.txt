@@ -1,0 +1,37 @@
+DJANGO URLS, VIEWS, AND TEMPLATES
+=================================
+
+What's the first place the URL a user enters goes to look for instructions?
+
+In which file do we register the URL paths related to our Django app?
+
+Explain the path that a user's HTTP GET request takes through Django files
+
+-
+
+Where do we write our code logic?
+
+What does a function inside a view always take as an argument?
+
+What does it usually return?
+
+What code allows us to get all entries from a table in our db?
+
+-
+
+What is template inheritance, and what are the two important concepts
+to remember regarding that?
+
+-
+
+How do we pass database information into a Django template?
+
+How can we then access it in the template?
+
+What's the Django templating language syntax for:
+* code logic?
+* variables to display?
+
+How would you write a for loop inside a Django template that iterates
+over a QuerySet object from our database and renders each entry in
+a new list item?
