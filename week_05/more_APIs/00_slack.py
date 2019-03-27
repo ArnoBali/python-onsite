@@ -83,15 +83,15 @@ for m in range(len(messages)):
         msg_dict["date_added"] = None
         pass
 
-        msg_dict["read"] = False # defaults to False, change to True if you read it
-        msg_dict["rating"] = 0   # on a scale from 1-10, initially 0
-
     try:
         msg_dict["comments"] = messages[m]['attachments'][0]['text']
     except Exception as error:
         msg_dict["comments"] = None
         pass
-        msg_dict["starred"] = False # defaults to False, change to True if you think it's great
+
+    msg_dict["starred"] = False # defaults to False, change to True if you think it's great
+    msg_dict["read"] = False # defaults to False, change to True if you read it
+    msg_dict["rating"] = 0   # on a scale from 1-10, initially 0
 
     msg_list.append(msg_dict)
 
