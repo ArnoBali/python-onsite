@@ -1,37 +1,54 @@
 DJANGO URLS, VIEWS, AND TEMPLATES
 =================================
 
-What's the first place the URL a user enters goes to look for instructions?
+1) What's the first place the URL a user enters goes to look for instructions?
 
-In which file do we register the URL paths related to our Django app?
 
-Explain the path that a user's HTTP GET request takes through Django files
+2) In which file do we register the URL paths related to our Django app?
 
--
 
-Where do we write our code logic?
-
-What does a function inside a view always take as an argument?
-
-What does it usually return?
-
-What code allows us to get all entries from a table in our db?
+3) Explain the path that a user's HTTP GET request takes through Django files
+    1. urls.py project app
+    2. urls.py app
+    3. views.py app
+    4. function in views (can pull data from models.py from db)
+    4. template.py app
+    5. to w
 
 -
 
-What is template inheritance, and what are the two important concepts
+4) Where do we write our code logic?
+    Django
+
+5) What does a function inside a view always take as an argument?
+    request
+6) What does it usually return?
+    render(request, 'index.html', context)
+
+7) What code allows us to get all entries from a table in our db?
+    Class.objects.get(id=1)
+    var = Class.objects.all()
+-
+
+8) What is template inheritance, and what are the two important concepts
 to remember regarding that?
+    html files
+    - prevent repetition and structure across the Django app
+    - {% extends 'base.html' %}
+    - {% block 'name' %}
 
--
+      {% endblock %}
 
-How do we pass database information into a Django template?
+9) How do we pass database information into a Django template?
+    - Use the render() method
+    - context
 
-How can we then access it in the template?
+10) How can we then access it in the template?
 
-What's the Django templating language syntax for:
-* code logic?
-* variables to display?
+11) What's the Django templating language syntax for:
+* code logic? {% %}
+* variables to display? {{variable}}
 
-How would you write a for loop inside a Django template that iterates
+12) How would you write a for loop inside a Django template that iterates
 over a QuerySet object from our database and renders each entry in
 a new list item?
