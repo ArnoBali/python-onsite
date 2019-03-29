@@ -1,0 +1,35 @@
+DJANGO USER AUTHENTICATION
+==========================
+
+1) What is the difference between authentication and login?
+
+2) Why do we need a POST request for user auth?
+
+3) What's the advantage for using Django for authentication?
+
+4) How did we write the authentication for for users
+
+-
+
+EXTRA TWIST: YOUR QUESTIONS
+===========================
+
+5) Arno:
+
+6) Melissa:
+
+7) Ben:
+
+8) Ming:
+
+9) Robert:
+
+10) Daniel:
+
+11) Michael:
+
+12) Blake:
+
+13) Frederick:
+
+14) Andy:
