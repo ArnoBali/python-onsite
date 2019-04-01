@@ -11,9 +11,15 @@ DJANGO FORM INPUT
 3) How can we check which HTTP request brought us to a function in views.py?
    if request.method != 'POST':
 
+<<<<<<< HEAD
 4) What class do we inherit from when we want to create a Form class from an
 existing model?
     models.ModelForm
+=======
+4) What class do we inherit from when we want to create a Form class from an existing model?
+
+-
+>>>>>>> 516bcc091c9c3ea9eb6794d4a1dd5fcf50a55565
 
 5) Explain the namespace for apps and URL paths and why this whole thing is important
 Modularity -> if url changes, all is still linked
